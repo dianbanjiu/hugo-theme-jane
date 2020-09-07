@@ -28,13 +28,13 @@
 
   <!-- paginate numbered style  -->
   <!-- Number of links either side of the current page. -->
-  {{ $adjacent_links := 6 }}
+  {{ $adjacent_links := 1 }}
 
   <!-- $max_links = ($adjacent_links * 2) + 1 -->
-  {{ $max_links := (add (mul $adjacent_links 2) 1) }}
+  {{ $max_links := 4 }}
 
   <!-- $lower_limit = $adjacent_links + 1 -->
-  {{ $lower_limit := (add $adjacent_links 1) }}
+  {{ $lower_limit := 2 }}
 
   <!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
   {{ $upper_limit := (sub $pag.TotalPages $adjacent_links) }}
@@ -57,10 +57,10 @@
     <nav class="pagination">
       <ul>
 
-      <!-- First page. -->
+      <!-- First page.
       {{ if ne $pag.PageNumber 1 }}
-      <li><a href="{{ $pag.First.URL }}">««</a></li>
-      {{ end }}
+      <li><a href="{{ $pag.First.URL }}"></a></li>
+      {{ end }} -->
 
       <!-- Previous page. -->
       {{ if $pag.HasPrev }}
@@ -125,10 +125,10 @@
       <li><a href="{{ $pag.Next.URL }}">»</a></li>
       {{ end }}
 
-      <!-- Last page. -->
+      <!-- Last page.
       {{ if ne $pag.PageNumber $pag.TotalPages }}
       <li><a href="{{ $pag.Last.URL }}">»»</a></li>
-      {{ end }}
+      {{ end }} -->
 
       </ul>
     </nav><!-- .pagination -->

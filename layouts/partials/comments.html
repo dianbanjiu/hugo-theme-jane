@@ -144,7 +144,8 @@
         verify: {{ .Site.Params.valine.verify }}, 
         avatar:'{{ .Site.Params.valine.avatar }}', 
         placeholder: '{{ .Site.Params.valine.placeholder }}',
-        visitor: {{ false }}
+        visitor: {{ .Site.Params.valine.visitor }},
+        requiredFields: {{ .Site.Params.valine.requiredFields }}
     });
   </script>
   {{- end }}

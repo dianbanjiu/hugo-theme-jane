@@ -1,16 +1,4 @@
-<div class="icon-links">
-  {{ partial "social_links.html" . }} 
-</div>
-
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
   <span class="copyright-year">
     {{- $current := now.Format "2006" }}
     &copy;
@@ -38,6 +26,12 @@
     <span id="busuanzi_container">
       访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
     </span>
+  {{ end }}
+
+  <!--JinRiShiCi-->
+  {{ if .Site.Params.jinrishici.enable }}
+  <span id="jinrishici-sentence">正在加载今日诗词....</span>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
   {{ end }}
 
   {{ if .Site.Params.customFooter }}
